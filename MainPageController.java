@@ -1,5 +1,7 @@
 package com.example.project_2_331;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -20,13 +22,13 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class MainPageController {
+public class MainPageController implements Initializable{
 
     @FXML
     private Button browseButton;
 
     @FXML
-    private ChoiceBox<?> searchMenuChoice;
+    private ChoiceBox<String> searchMenuChoice;
 
     @FXML
     private Label searchMenuLabel;
@@ -46,5 +48,16 @@ public class MainPageController {
         stage.setTitle("accountInfo");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        searchMenuChoice.setItems(getSearchOptions());
+    }
+
+    public ObservableList<String> getSearchOptions(){
+        ObservableList<String> searchOptions = FXCollections.observableArrayList();
+        searchOptions.addAll("Title", "Author", "Genre");
+        return searchOptions;
     }
 }

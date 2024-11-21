@@ -8,6 +8,7 @@ public class book {
     public String bookName;
     public String authorName;
     public String genre;
+    public int sNo;
     public int bookQty;
     public int bookQtyCopy;
 

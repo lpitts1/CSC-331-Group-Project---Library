@@ -61,11 +61,98 @@ public class books {
         }
     }
 
-    public void showAllBooks(){
+    public void searchBySno()
+    {
 
+        // Display message
+        System.out.println(
+                "\t\t\t\tSEARCH BY SERIAL NUMBER\n");
+
+        // Class data members
+        int sNo;
+        System.out.println("Enter Serial No of Book:");
+        sNo = input.nextInt();
+
+        int flag = 0;
+        System.out.println(
+                "S.No\t\tName\t\tAuthor\t\tAvailable Qty\t\tTotal Qty");
+
+        for (int i = 0; i < count; i++) {
+            if (sNo == allBooks[i].sNo) {
+                System.out.println(
+                        allBooks[i].sNo + "\t\t"
+                                + allBooks[i].bookName + "\t\t"
+                                + allBooks[i].authorName + "\t\t"
+                                + allBooks[i].bookQtyCopy + "\t\t"
+                                + allBooks[i].bookQty);
+                flag++;
+                return;
+            }
+        }
+        if (flag == 0)
+            System.out.println("No Book for Serial No "
+                    + sNo + " Found.");
+    }
+
+
+    public void showAllBooks() {
+        System.out.println("\t\t\t\tSHOWING ALL BOOKS\n");
+        System.out.println(
+                "S.No\t\tName\t\tAuthor\t\tAvailable Qty\t\tTotal Qty");
+
+        for (int i = 0; i < count; i++) {
+
+            System.out.println(
+                    allBooks[i].sNo + "\t\t"
+                            + allBooks[i].bookName + "\t\t"
+                            + allBooks[i].authorName + "\t\t"
+                            + allBooks[i].bookQtyCopy + "\t\t"
+                            + allBooks[i].bookQty);
+
+        }
     }
 
     public void upgradeBookQty(){
+        System.out.println(
+                "\t\t\t\tUPGRADE QUANTITY OF A BOOK\n");
+        System.out.println("Enter Serial No of Book");
+
+        int sNo = input.nextInt();
+
+        for (int i = 0; i < count; i++) {
+
+            if (sNo == allBooks[i].sNo) {
+
+                // Display message
+                System.out.println(
+                        "Enter No of Books to be Added:");
+
+                int addingQty = input.nextInt();
+                allBooks[i].bookQty += addingQty;
+                allBooks[i].bookQtyCopy += addingQty;
+
+                return;
+            }
+        }
+    }
+
+    public void dispMenu(){
+        // Displaying menu
+        System.out.println(
+                "----------------------------------------------------------------------------------------------------------");
+        System.out.println("Press 1 to Add new Book.");
+        System.out.println("Press 0 to Exit Application.");
+        System.out.println(
+                "Press 2 to Upgrade Quantity of a Book.");
+        System.out.println("Press 3 to Search a Book.");
+        System.out.println("Press 4 to Show All Books.");
+        System.out.println("Press 5 to Register Student.");
+        System.out.println(
+                "Press 6 to Show All Registered Students.");
+        System.out.println("Press 7 to Check Out Book. ");
+        System.out.println("Press 8 to Check In Book");
+        System.out.println(
+                "-------------------------------------------------------------------------------------------------------");
 
     }
 

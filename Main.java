@@ -15,7 +15,7 @@ public class Main extends Application {
         // Loads the main page
         Parent root = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("accountInfo");
+        stage.setTitle("Welcome to the Library");
         stage.setScene(scene);
         stage.show();
     }

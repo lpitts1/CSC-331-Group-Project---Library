@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="472.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MainPageController">
+  <children>
+    <MenuBar prefHeight="18.0" prefWidth="640.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="0.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Label fx:id="searchMenuLabel" layoutX="290.0" layoutY="137.0" text="Search By:" />
+            <ChoiceBox id="searchChoice" fx:id="searchMenuChoice" layoutX="245.0" layoutY="164.0" prefWidth="150.0" />
+            <TextField id="searchField" fx:id="searchTextField" layoutX="246.0" layoutY="223.0" />
+            <Button id="goBtn" fx:id="goBtn" layoutX="303.0" layoutY="262.0" mnemonicParsing="false" text="Go!" />
+            <Accordion id="diplayLib" layoutX="14.0" layoutY="32.0" prefHeight="360.0" prefWidth="217.0">
+               <panes>
+                  <TitledPane fx:id="bookPane1" animated="false" prefHeight="89.0" prefWidth="217.0" text="1984">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                           <children>
+                              <Label layoutX="48.0" layoutY="6.0" text="Author: George Orwell" />
+                              <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                              <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1001" />
+                              <Label fx:id="count84" layoutX="74.0" layoutY="87.0" text="Books Left: 3" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane2" animated="false" text="The Great Gatsby">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="6.0" text="Author: F. Scott Fitzgerald" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1002" />
+                                    <Label fx:id="countGatsby" layoutX="74.0" layoutY="87.0" text="Books Left: 1" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane3" animated="false" text="The Girl with the Dragon Tattoo">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="6.0" text="Author: Stieg Larsson" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1003" />
+                                    <Label fx:id="countDragon" layoutX="74.0" layoutY="87.0" text="Books Left: 6" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane4" animated="false" text="The Lord of the Rings">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="6.0" text="Author: J.R.R. Tolkien" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1004" />
+                                    <Label fx:id="countRings" layoutX="74.0" layoutY="87.0" text="Books Left: 3" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane5" animated="false" text="The Hobbit">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="6.0" text="Author: J.R.R. Tolkien" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1004" />
+                                    <Label fx:id="countHobbit" layoutX="74.0" layoutY="87.0" text="Books Left: 4" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane6" animated="false" text="The Da Vinci Code">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="57.0" layoutY="6.0" text="Author: Dan Brown" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1006" />
+                                    <Label fx:id="countCode" layoutX="74.0" layoutY="87.0" text="Books Left: 0" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane7" animated="false" text="Harry Potter and the Goblet of Fire">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="55.0" layoutY="6.0" text="Author: J.K. Rowling" />
+                                    <Label layoutX="71.0" layoutY="35.0" text="Genre: Fiction" />
+                                    <Label fx:id="countPotter" layoutX="74.0" layoutY="87.0" text="Books Left: 14" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="54.0" layoutY="57.0" text="Serial Number: 1007" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane8" animated="false" prefWidth="202.0" text="Animal Farm">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="6.0" text="Author: George Orwell" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1008" />
+                                    <Label fx:id="countFarm" layoutX="74.0" layoutY="87.0" text="Books Left: 6" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane9" animated="false" text="The Catcher in the Rye">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="54.0" layoutY="6.0" text="Author: J.D. Salinger" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1009" />
+                                    <Label fx:id="countRye" layoutX="74.0" layoutY="87.0" text="Books Left: 5" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="bookPane0" animated="false" text="To Kill a Mockingbird">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="215.0">
+                                 <children>
+                                    <Label layoutX="57.0" layoutY="6.0" text="Author: Harper Lee" />
+                                    <Label layoutX="72.0" layoutY="31.0" text="Genre: Fiction" />
+                                    <Label layoutX="54.0" layoutY="55.0" text="Serial Number: 1010" />
+                                    <Label fx:id="countBird" layoutX="74.0" layoutY="87.0" text="Books Left: 2" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+               </panes></Accordion>
+            <Button id="acctBtn" fx:id="accountViewButton" layoutX="501.0" layoutY="15.0" mnemonicParsing="false" onAction="#accountButtonPress" text="View your account" />
+            <Label layoutX="80.0" layoutY="7.0" text="Available Books:" underline="true" />
+            <Label layoutX="276.0" layoutY="344.0" text="Select how you want to add your book, then click go to check out." />
+      </children>
+    </AnchorPane>
+      <TextField prefHeight="0.0" prefWidth="640.0" />
+  </children>
+</VBox>

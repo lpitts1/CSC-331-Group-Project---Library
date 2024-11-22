@@ -1,13 +1,15 @@
+package com.example.librarygroupproject;
+
 import java.util.Scanner;
 
 public class Library {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
-        // create object of book class
-        books ob = new books();
+        // create object of com.example.librarygroupproject.book class
+        Books ob = new Books();
         // create object of member class
-        members obMember = new members();
+        Members obMember = new Members();
 
         int choice;
         int searchChoice;
@@ -18,7 +20,7 @@ public class Library {
 
             switch(choice){
                 case 1:
-                    book b = new book();
+                    Book b = new Book("Moby Dick", "Herman Melville", "Fiction", 1);
                     ob.newBook(b);
                     break;
 
@@ -27,7 +29,7 @@ public class Library {
                     break;
 
                 case 3:
-                    System.out.println("Press 1 to search with book serial number.");
+                    System.out.println("Press 1 to search with com.example.librarygroupproject.book serial number.");
                     System.out.println("Press 2 to search with author name");
                     searchChoice = input.nextInt();
 

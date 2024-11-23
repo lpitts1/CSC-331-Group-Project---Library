@@ -1,0 +1,58 @@
+import java.time.LocalDate;
+
+public class Book {
+    public String bookName;
+    public String authorName;
+    public String genre;
+    public int bookQty;
+    public int bookQtyCopy;
+    public int sNo;
+    public LocalDate checkOutDate;
+
+    // Constructor for library usage?
+    public Book(String bookName, String authorName, String genre, int bookQty)
+    {
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.genre = genre;
+        this.bookQty = bookQty;
+    }
+
+    // Constructor for checked out com.example.librarygroupproject.books usage?
+    public Book(String bookName, String authorName, String genre, LocalDate checkOutDate)
+    {
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.genre = genre;
+        this.checkOutDate = checkOutDate;
+    }
+    public String getBookName() {
+        return bookName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public int getBookQty() {
+
+        return bookQty;
+    }
+    private boolean isAvailable = true;
+    public boolean isAvailable(){return isAvailable;}
+    public boolean checkOut(Member member){
+        if(this.isAvailable){
+            this.isAvailable = false;
+            member.borrowBook(this);
+            this.bookQty = this.bookQtyCopy-1;
+        }
+        return false;
+    }
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+}

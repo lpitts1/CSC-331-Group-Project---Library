@@ -93,13 +93,21 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <Label fx:id="searchMenuLabel" layoutX="290.0" layoutY="66.0" text="Search By:" />
+            <Label fx:id="searchMenuLabel" layoutX="267.0" layoutY="56.0" text="Search By:">
+               <font>
+                  <Font name="Berlin Sans FB" size="25.0" />
+               </font></Label>
             <ChoiceBox fx:id="searchMenuChoice" layoutX="245.0" layoutY="93.0" prefWidth="150.0" />
             <Button fx:id="browseButton" layoutX="270.0" layoutY="226.0" mnemonicParsing="false" text="Browse Library" />
             <TextField fx:id="searchTextField" layoutX="246.0" layoutY="152.0" />
-            <Button fx:id="searchButton" layoutX="303.0" layoutY="191.0" mnemonicParsing="false" text="Go!" disable="${searchTextField.text.empty}" onAction = "#searchButtonPress"/>
+            <Button fx:id="searchButton" disable="${searchTextField.text.empty}" layoutX="303.0" layoutY="191.0" mnemonicParsing="false" onAction="#searchButtonPress" text="Go!" />
             <Accordion layoutX="44.0" layoutY="28.0" prefHeight="200.0" prefWidth="202.0" />
-            <Button fx:id="accountViewButton" layoutX="501.0" layoutY="15.0" mnemonicParsing="false" text="View your account" onAction="#accountButtonPress"/>
+            <Button fx:id="accountViewButton" layoutX="501.0" layoutY="15.0" mnemonicParsing="false" onAction="#accountButtonPress" text="View your account" />
+            <Label layoutX="163.0" layoutY="10.0" prefHeight="35.0" prefWidth="313.0" text="Welcome to the Library" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="31.0" />
+               </font>
+            </Label>
       </children>
     </AnchorPane>
       <TextField />

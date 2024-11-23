@@ -41,6 +41,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_2_331.accountLoginController">
   <children>
@@ -85,8 +86,11 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="accountNumberEntryButton" layoutX="278.0" layoutY="192.0" mnemonicParsing="false" text="Submit" onAction="#accountInfoButtonPress"/>
-            <Label layoutX="231.0" layoutY="76.0" text="Enter your account number" />
+            <Button fx:id="accountNumberEntryButton" disable="${accountNumberTextField.text.empty}" layoutX="278.0" layoutY="192.0" mnemonicParsing="false" onAction="#accountInfoButtonPress" text="Submit" />
+            <Label layoutX="107.0" layoutY="87.0" text="Enter your account number to log in!">
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font></Label>
             <TextField fx:id="accountNumberTextField" layoutX="230.0" layoutY="136.0" />
       </children>
     </AnchorPane>

@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+
+public class Member {
+
+    public String memberName;
+    public String actNumber;
+    public List<Book> borrowedBooks;
+    public static final int MAXBooks = 3;
+    Scanner input = new Scanner(System.in);
+
+    public Member()
+    {
+        System.out.println("Enter Member's Name:");
+        this.memberName = input.nextLine();
+
+        System.out.println("Enter Account Number:");
+        this.actNumber = input.nextLine();
+        this.borrowedBooks = new ArrayList<>();
+    }
+    public String getMemberName(){return memberName;}
+    public String getActNumber(){return actNumber;}
+    public List<Book> getBorrowedBooks(){return borrowedBooks;}
+    public boolean borrowBook(Book book){
+        if(borrowedBooks.size() < MAXBooks){
+            borrowedBooks.add(book);
+            System.out.print("Book borrowed: " + book.getBookName());
+            return true;
+        } else{
+            System.out.println("You may not morrow anymore books, the max is 3");
+            return false;
+        }
+    }
+    public boolean returnBook(String bookName) {
+        for (Book book : borrowedBooks) {
+            if (book.getBookName().equalsIgnoreCase(bookName)) {
+                borrowedBooks.remove(book);
+                System.out.println("This book has been successfully returned: " + book.getBookName());
+                return true;
+            } else {
+                System.out.println("Book has not been found in your checkout list!");
+                return false;
+            }
+        }
+        return false;
+    }
+}

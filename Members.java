@@ -1,4 +1,4 @@
-package com.example.project_2_331;
+package com.example.library;
 
 import java.util.Scanner;
 
@@ -6,6 +6,7 @@ public class Members {
 
     Scanner input = new Scanner(System.in);
     Member allMembers[] = new Member[20];
+
 
     public static int count = 0;
 

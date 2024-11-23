@@ -1,4 +1,4 @@
-package com.example.project_2_331;
+package com.example.library;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -66,7 +66,7 @@ public class MainPageController implements Initializable{
         // Loads the account info page from a button press called in the mainPage.fxml
         try {
             // Create a new FXML object instance
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("accountLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
             // Load FXML into root
             Parent root = loader.load();
             //Stage stage = new Stage();
@@ -74,7 +74,6 @@ public class MainPageController implements Initializable{
             Stage stage = new Stage();
             stage.setTitle("Login");
             stage.setScene(scene);
-            ((accountLoginController) loader.getController()).setStage(stage);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

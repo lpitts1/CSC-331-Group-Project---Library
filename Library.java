@@ -1,4 +1,4 @@
-package com.example.librarygroupproject;
+package com.example.library;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ public class Library {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
-        // create object of com.example.librarygroupproject.book class
+        // create object of com.example.library.book class
         Books ob = new Books();
         // create object of member class
         Members obMember = new Members();
@@ -29,7 +29,7 @@ public class Library {
                     break;
 
                 case 3:
-                    System.out.println("Press 1 to search with com.example.librarygroupproject.book serial number.");
+                    System.out.println("Press 1 to search with com.example.library.book serial number.");
                     System.out.println("Press 2 to search with author name");
                     searchChoice = input.nextInt();
 
@@ -45,7 +45,7 @@ public class Library {
                     ob.showAllBooks();
 
                 case 5:
-                    Member m = new Member();
+                    Member m = new Member("12345", "John Doe");
                     obMember.addMember(m);
                     break;
 
@@ -54,7 +54,7 @@ public class Library {
                     break;
 
                 case 7:
-                    obMember.checkOut(ob);
+                    //obMember.checkOut(ob);
                     break;
 
                 case 8:

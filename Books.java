@@ -1,4 +1,4 @@
-package com.example.project_2_331;
+package com.example.library;
 
 import java.util.Scanner;
 
@@ -169,13 +169,13 @@ public class Books {
                 return -1;
             }
         }
-      System.out.println("No com.example.librarygroupproject.book named" + b + "exists in library.");
+      System.out.println("No book named" + b + "exists in library.");
 
         return -1;
     }
 
     public Book checkOut(){
-        System.out.println("Enter name of com.example.librarygroupproject.book to be checked out:");
+        System.out.println("Enter name of book to be checked out:");
 
         String name = input.nextLine();
 

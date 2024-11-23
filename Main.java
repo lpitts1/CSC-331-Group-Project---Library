@@ -1,4 +1,4 @@
-package com.example.project_2_331;
+package com.example.library;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    Member m = new Member("12345", "John Doe");
     public static void main(String[] args){
         launch(args);
     }

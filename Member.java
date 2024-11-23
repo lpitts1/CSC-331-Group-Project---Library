@@ -1,8 +1,8 @@
-package com.example.project_2_331;
+package com.example.library;
 
 import java.util.Scanner;
 
-public class Member {
+public class Member extends Members {
 
     String memberName;
     String actNumber;
@@ -12,13 +12,10 @@ public class Member {
 
     Scanner input = new Scanner(System.in);
 
-    public Member()
+    public Member(String actNumber, String memberName)
     {
-        System.out.println("Enter Member's Name:");
+        this.memberName = memberName;
 
-        this.memberName = input.nextLine();
-
-        System.out.println("Enter Account Number:");
-        this.actNumber = input.nextLine();
+        this.actNumber = actNumber;
     }
 }

@@ -1,3 +1,5 @@
+package com.example.project_2_331;
+
 import java.util.Scanner;
 
 public class Member {
@@ -5,7 +7,7 @@ public class Member {
     String memberName;
     String actNumber;
 
-    book borrowedBooks[] = new book[3];
+    Book borrowedBooks[] = new Book[3];
     public int booksCount = 0;
 
     Scanner input = new Scanner(System.in);

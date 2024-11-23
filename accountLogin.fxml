@@ -38,13 +38,11 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_2_331.searchResultsController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_2_331.accountLoginController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -87,21 +85,9 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
-          <font>
-            <Font size="18.0" />
-          </font>
-        </Label>
-            <TableView fx:id="searchResultsTable" layoutX="4.0" layoutY="77.0" prefHeight="260.0" prefWidth="627.0">
-              <columns>
-                <TableColumn fx:id="titleColumn" prefWidth="247.33328247070312" text="Title" />
-                <TableColumn fx:id="authorColumn" prefWidth="149.3333740234375" text="Author" />
-                  <TableColumn fx:id="genreColumn" prefWidth="125.33334350585938" text="Genre" />
-                  <TableColumn fx:id="qtyColumn" prefWidth="105.3333740234375" text="Qty" />
-              </columns>
-            </TableView>
-            <Label fx:id="searchResultsLabel" layoutX="264.0" layoutY="33.0" text="Your Search Results:" />
-            <Button fx:id="checkOutSearchButton" layoutX="260.0" layoutY="337.0" mnemonicParsing="false" text="Check out selection"/>
+            <Button fx:id="accountNumberEntryButton" layoutX="278.0" layoutY="192.0" mnemonicParsing="false" text="Submit" onAction="#accountInfoButtonPress"/>
+            <Label layoutX="231.0" layoutY="76.0" text="Enter your account number" />
+            <TextField fx:id="accountNumberTextField" layoutX="230.0" layoutY="136.0" />
       </children>
     </AnchorPane>
   </children>

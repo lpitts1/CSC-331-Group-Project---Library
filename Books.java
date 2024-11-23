@@ -1,4 +1,4 @@
-package com.example.librarygroupproject;
+package com.example.project_2_331;
 
 import java.util.Scanner;
 

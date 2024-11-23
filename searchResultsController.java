@@ -80,9 +80,7 @@ public class searchResultsController implements Initializable {
             AccountInfoController controller = loader.getController();
             // Calls the getList method from searchResultsController after passing
             // the observable list of matching books from the search to it.
-            controller.setBook(b);
-            controller.getBook().clear();
-            controller.getBook();
+            controller.getBook().add(b);
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setTitle("Search Results");

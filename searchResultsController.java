@@ -90,7 +90,7 @@ public class searchResultsController implements Initializable {
                 AccountInfoController controller = loader.getController();
                 // Calls the getList method from searchResultsController after passing
                 // the observable list of matching books from the search to it.
-                b = new Book(b.getBookName(), b.getAuthorName(), b.getGenre(), LocalDate.now());
+                b = new Book(b.getBookName(), b.getAuthorName(), b.getGenre(), b.getCheckOutDate());
                 controller.getBook().add(b);
                 Member m = controller.getMember();
                 m.borrowedBooks[m.borrowedBooks.length - 1] = b;

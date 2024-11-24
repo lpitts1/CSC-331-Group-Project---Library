@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.project_2_331;
 
 
 import java.time.LocalDate;
@@ -45,7 +45,7 @@ public class Book {
         this.bookName = bookName;
         this.authorName = authorName;
         this.genre = genre;
-        this.checkOutDate = checkOutDate;
+        this.checkOutDate = LocalDate.now();
     }
 
     /**
@@ -93,6 +93,7 @@ public class Book {
      * Decreases the book quantity by one if the book is checked out
      */
     public void checkOut(){
+
         this.bookQty = bookQty -1;
     }
     

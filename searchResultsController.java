@@ -25,7 +25,10 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import java.time.LocalDate;
-
+/**
+    *controller for search results and search function
+    *lets you check out books
+*/
 public class searchResultsController implements Initializable {
     Member m;
 
@@ -42,6 +45,9 @@ public class searchResultsController implements Initializable {
     @FXML private TableColumn<Book, String> genreColumn;
     @FXML private TableColumn<Book, Integer> qtyColumn;
     @FXML
+    /**
+     * puts search results in the table
+    */
     public void getList(ObservableList<Book> searchList){
         // Initializes columns of the table for each book attribute
         titleColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("bookName"));
@@ -53,7 +59,7 @@ public class searchResultsController implements Initializable {
         checkOutSearchButton.setDefaultButton(true);
         checkOutSearchButton.setOnAction(actionEvent -> {
             try {
-                checkOutButton();
+                checkOutButton(); 
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -61,7 +67,7 @@ public class searchResultsController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        
     }
     @FXML
     public void setMember(Member m){
@@ -70,7 +76,8 @@ public class searchResultsController implements Initializable {
     @FXML
     public void checkOutButton() throws Exception {
         Book b = searchResultsTable.getSelectionModel().getSelectedItem();
-
+//exception for if selected book quantity is zero
+        //creates new stage called error window to display message
         if (b.bookQty == 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("errorWindow.fxml"));
             Parent root2 = loader.load();

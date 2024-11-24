@@ -51,7 +51,7 @@ public class MainPageController implements Initializable{
             stage.setTitle("Search Results");
             stage.setScene(scene);
             // Returns root controller (searchResultsController)
-            searchResultsController controller = loader.getController();
+            SearchResultsController controller = loader.getController();
             // Calls the getList method from searchResultsController after passing
             // the observable list of matching books from the search to it.
             controller.getList(compareParam());

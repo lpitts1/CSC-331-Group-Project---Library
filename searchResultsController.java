@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
+import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.scene.layout.*;
@@ -69,25 +70,35 @@ public class searchResultsController implements Initializable {
     @FXML
     public void checkOutButton() throws Exception {
         Book b = searchResultsTable.getSelectionModel().getSelectedItem();
-        b.checkOut();
 
-        try {
-            // Create a new FXML object instance
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
-            // Load FXML into root
-            Parent root = loader.load();
-            // Returns root controller (searchResultsController)
-            AccountInfoController controller = loader.getController();
-            // Calls the getList method from searchResultsController after passing
-            // the observable list of matching books from the search to it.
-            controller.getBook().add(b);
+        if (b.bookQty == 0) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("errorWindow.fxml"));
+            Parent root2 = loader.load();
             Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setTitle("Search Results");
-            stage.setScene(scene);
+            stage.setTitle("error");
+            stage.setScene(new Scene(root2,400,250));
             stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        }else{
+            b.checkOut();
+            b.getCheckOutDate();
+            try {
+                // Create a new FXML object instance
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
+                // Load FXML into root
+                Parent root = loader.load();
+                // Returns root controller (searchResultsController)
+                AccountInfoController controller = loader.getController();
+                // Calls the getList method from searchResultsController after passing
+                // the observable list of matching books from the search to it.
+                controller.getBook().add(b);
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.setTitle("Search Results");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 

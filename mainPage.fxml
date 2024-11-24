@@ -93,17 +93,17 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <Label fx:id="searchMenuLabel" layoutX="267.0" layoutY="56.0" text="Search By:">
+            <Label fx:id="searchMenuLabel" layoutX="263.0" layoutY="118.0" text="Search By:">
                <font>
                   <Font name="Berlin Sans FB" size="25.0" />
                </font></Label>
-            <ChoiceBox fx:id="searchMenuChoice" layoutX="245.0" layoutY="93.0" prefWidth="150.0" />
-            <Button fx:id="browseButton" layoutX="270.0" layoutY="226.0" mnemonicParsing="false" text="Browse Library" />
-            <TextField fx:id="searchTextField" layoutX="246.0" layoutY="152.0" />
-            <Button fx:id="searchButton" disable="${searchTextField.text.empty}" layoutX="303.0" layoutY="191.0" mnemonicParsing="false" onAction="#searchButtonPress" text="Go!" />
-            <Accordion layoutX="44.0" layoutY="28.0" prefHeight="200.0" prefWidth="202.0" />
+            <ChoiceBox fx:id="searchMenuChoice" layoutX="245.0" layoutY="163.0" prefWidth="150.0" />
+            <Button fx:id="browseButton" layoutX="273.0" layoutY="299.0" mnemonicParsing="false" text="Browse Library" />
+            <TextField fx:id="searchTextField" layoutX="219.0" layoutY="204.0" prefHeight="23.0" prefWidth="202.0" />
+            <Button fx:id="searchButton" disable="${searchTextField.text.empty}" layoutX="302.0" layoutY="246.0" mnemonicParsing="false" onAction="#searchButtonPress" text="Go!" />
+            <Accordion layoutX="7.0" layoutY="117.0" prefHeight="200.0" prefWidth="202.0" />
             <Button fx:id="accountViewButton" layoutX="501.0" layoutY="15.0" mnemonicParsing="false" onAction="#accountButtonPress" text="View your account" />
-            <Label layoutX="163.0" layoutY="10.0" prefHeight="35.0" prefWidth="313.0" text="Welcome to the Library" textAlignment="CENTER">
+            <Label layoutX="156.0" layoutY="65.0" prefHeight="46.0" prefWidth="327.0" text="Welcome to the Library" textAlignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="31.0" />
                </font>

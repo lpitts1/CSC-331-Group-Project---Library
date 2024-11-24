@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 //error window
-public class errorWindowController {
+public class ErrorWindowController {
     Stage stage;
     @FXML
     private Button okayButton;

@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.*;
@@ -25,7 +26,6 @@ import javafx.scene.control.*;
     *lets you check out books
 */
 public class searchResultsController implements Initializable {
-    Member m;
 
     @FXML
     private Label searchResultsLabel;
@@ -65,13 +65,9 @@ public class searchResultsController implements Initializable {
         
     }
     @FXML
-    public void setMember(Member m){
-        this.m = m;
-    }
-    @FXML
     public void checkOutButton() throws Exception {
         Book b = searchResultsTable.getSelectionModel().getSelectedItem();
-//exception for if selected book quantity is zero
+        //exception for if selected book quantity is zero
         //creates new stage called error window to display message
         if (b.bookQty == 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("errorWindow.fxml"));
@@ -94,9 +90,14 @@ public class searchResultsController implements Initializable {
                 AccountInfoController controller = loader.getController();
                 // Calls the getList method from searchResultsController after passing
                 // the observable list of matching books from the search to it.
+                b = new Book(b.getBookName(), b.getAuthorName(), b.getGenre(), LocalDate.now());
                 controller.getBook().add(b);
+                Member m = controller.getMember();
+                m.borrowedBooks[m.borrowedBooks.length - 1] = b;
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
+                AccountInfoController controller2 = loader.getController();
+                controller2.setStage(stage);
                 stage.setTitle("Search Results");
                 stage.setScene(scene);
                 stage.show();
@@ -104,7 +105,5 @@ public class searchResultsController implements Initializable {
                 e.printStackTrace();
             }
         }
-
-
     }
 }

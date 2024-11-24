@@ -30,7 +30,10 @@ import java.util.ResourceBundle;
  * 11/24/2024
  */
 public class AccountInfoController implements Initializable {
-    Member m;
+    Member m = new Member("12345", "John Doe");
+    IDCard mID = new IDCard("John Doe", "12345","11/23/2024");
+    @FXML public Button backToSearchButton;
+    Stage stage;
     Book book;
     ObservableList<Book> books = FXCollections.observableArrayList();
     @FXML private TableView<Book> checkoutTable;
@@ -53,6 +56,10 @@ public class AccountInfoController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setTable(m, mID);
+    }
+
+    public void setTable(Member m, IDCard mID){
         // Initializes columns of the table for each book attribute
         titleColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("bookName"));
         authorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("authorName"));
@@ -60,8 +67,8 @@ public class AccountInfoController implements Initializable {
         checkoutDateColumn.setCellValueFactory(new PropertyValueFactory<Book, LocalDate>("checkOutDate"));
         // Sets the values
         checkoutTable.setItems(getBook());
-        Member m = new Member("12345", "John Doe");
-        IDCard mID = new IDCard("John Doe", "12345","11/23/2024");
+        //Member m = new Member("12345", "John Doe");
+        //IDCard mID = new IDCard("John Doe", "12345","11/23/2024");
         accountTextField.setText(mID.actNumber);
         creationTextField.setText(mID.getDateCreated());
         memNameTextField.setText(mID.memberName);
@@ -74,6 +81,7 @@ public class AccountInfoController implements Initializable {
             }
         });
     }
+
     /**
      * ObservableList retrieces the list of books to display into the table
      *
@@ -100,28 +108,30 @@ public class AccountInfoController implements Initializable {
         b.checkIn();
 
         try {
-            // Create a new FXML object instance
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
-            // Load FXML into root
-            //Parent root = loader.load();
-            // Returns root controller (searchResultsController)
-            //AccountInfoController controller = loader.getController();
-            // Calls the getList method from searchResultsController after passing
             // the observable list of matching books from the search to it.
             ObservableList<Book> newList = getBook();
             newList.remove(b);
             checkoutTable.setItems(newList);
-            //Stage stage = new Stage();
-            //Scene scene = new Scene(root);
-            //stage.setTitle("Search Results");
-            //stage.setScene(scene);
-            //stage.show();
+            m.borrowedBooks[m.borrowedBooks.length - 1] = null;
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
+    }
+    public void setStage(Stage stage){
+        this.stage = stage;
+    }
+    public Member getMember(){
+        return m;
     }
 
-
+    public void backToSearch() throws Exception{
+        backToSearchButton.setOnAction(actionEvent -> {
+            try {
+                stage.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
 }

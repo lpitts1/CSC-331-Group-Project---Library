@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.project_2_331;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +18,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainPageController implements Initializable{
-
     @FXML
     private Button browseButton;
     @FXML
@@ -69,10 +68,11 @@ public class MainPageController implements Initializable{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
             // Load FXML into root
             Parent root = loader.load();
-            //Stage stage = new Stage();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
-            stage.setTitle("Login");
+            AccountInfoController controller = loader.getController();
+            controller.setStage(stage);
+            stage.setTitle("Account Information");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -82,6 +82,7 @@ public class MainPageController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         searchMenuChoice.setValue("Title");  // Set default value of choicebox for search
         searchMenuChoice.setItems(getSearchOptions());  // List of search options
     }

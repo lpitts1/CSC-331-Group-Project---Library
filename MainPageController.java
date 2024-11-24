@@ -43,7 +43,7 @@ public class MainPageController implements Initializable{
     public void searchButtonPress(ActionEvent event) throws Exception{
         try {
             // Create a new FXML object instance
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("searchResults.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchResults.fxml"));
             // Load FXML into root
             Parent root = loader.load();
             Stage stage = new Stage();
@@ -65,7 +65,7 @@ public class MainPageController implements Initializable{
         // Loads the account info page from a button press called in the mainPage.fxml
         try {
             // Create a new FXML object instance
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountInfo.fxml"));
             // Load FXML into root
             Parent root = loader.load();
             Scene scene = new Scene(root);

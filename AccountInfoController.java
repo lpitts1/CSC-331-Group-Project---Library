@@ -1,4 +1,4 @@
-package com.example.library;
+package com.example.project_2_331;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -101,20 +101,22 @@ public class AccountInfoController implements Initializable {
 
         try {
             // Create a new FXML object instance
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
             // Load FXML into root
-            Parent root = loader.load();
+            //Parent root = loader.load();
             // Returns root controller (searchResultsController)
-            AccountInfoController controller = loader.getController();
+            //AccountInfoController controller = loader.getController();
             // Calls the getList method from searchResultsController after passing
             // the observable list of matching books from the search to it.
-            controller.getBook().remove(b);
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setTitle("Search Results");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
+            ObservableList<Book> newList = getBook();
+            newList.remove(b);
+            checkoutTable.setItems(newList);
+            //Stage stage = new Stage();
+            //Scene scene = new Scene(root);
+            //stage.setTitle("Search Results");
+            //stage.setScene(scene);
+            //stage.show();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

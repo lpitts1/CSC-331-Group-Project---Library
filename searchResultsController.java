@@ -1,7 +1,6 @@
-package com.example.library;
+package com.example.project_2_331;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,14 +16,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-import java.util.Objects;
 import java.util.ResourceBundle;
-import javafx.application.Application;
-import javafx.scene.layout.*;
-import javafx.event.EventHandler;
+
 import javafx.scene.control.*;
-import javafx.scene.control.Alert.AlertType;
-import java.time.LocalDate;
+
 /**
     *controller for search results and search function
     *lets you check out books
@@ -84,6 +79,8 @@ public class searchResultsController implements Initializable {
             Stage stage = new Stage();
             stage.setTitle("error");
             stage.setScene(new Scene(root2,400,250));
+            errorWindowController controller = loader.getController();
+            controller.setStage(stage);
             stage.show();
         }else{
             b.checkOut();

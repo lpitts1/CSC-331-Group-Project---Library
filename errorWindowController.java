@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+//error window
 public class errorWindowController {
     Stage stage;
     @FXML
@@ -17,8 +17,8 @@ public class errorWindowController {
     public void setStage(Stage stage){
         this.stage = stage;
     }
-
-
+//action event
+//ok button closes window 
     @FXML
     public void okayButtonPress(ActionEvent event) throws Exception {
         okayButton.setOnAction(actionEvent -> {

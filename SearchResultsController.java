@@ -70,7 +70,7 @@ public class SearchResultsController implements Initializable {
         //exception for if selected book quantity is zero
         //creates new stage called error window to display message
         if (b.bookQty == 0) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("errorWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ErrorWindow.fxml"));
             Parent root2 = loader.load();
             Stage stage = new Stage();
             stage.setTitle("error");
@@ -83,7 +83,7 @@ public class SearchResultsController implements Initializable {
             b.getCheckOutDate();
             try {
                 // Create a new FXML object instance
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("accountInfo.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountInfo.fxml"));
                 // Load FXML into root
                 Parent root = loader.load();
                 // Returns root controller (searchResultsController)

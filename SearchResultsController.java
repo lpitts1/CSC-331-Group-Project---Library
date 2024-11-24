@@ -25,7 +25,7 @@ import javafx.scene.control.*;
     *controller for search results and search function
     *lets you check out books
 */
-public class searchResultsController implements Initializable {
+public class SearchResultsController implements Initializable {
 
     @FXML
     private Label searchResultsLabel;
@@ -75,7 +75,7 @@ public class searchResultsController implements Initializable {
             Stage stage = new Stage();
             stage.setTitle("error");
             stage.setScene(new Scene(root2,400,250));
-            errorWindowController controller = loader.getController();
+            ErrorWindowController controller = loader.getController();
             controller.setStage(stage);
             stage.show();
         }else{

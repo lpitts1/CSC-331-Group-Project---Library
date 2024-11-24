@@ -20,7 +20,15 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 
-
+/**
+ * The AccountInfoController is responsible for managing the account info in the GUI
+ *
+ * It initializes, uses user interactions, and updates the data in the GUI
+ * AccountInfoController is linked with our AccountInfo.FXML to display the appropiate
+ * information with respect to Member and Book objects
+ *
+ * 11/24/2024
+ */
 public class AccountInfoController implements Initializable {
     Member m;
     Book book;
@@ -34,6 +42,15 @@ public class AccountInfoController implements Initializable {
     @FXML private TextField creationTextField;
     @FXML private TextField memNameTextField;
     @FXML private Button checkInActButton;
+    /**
+     * Initializes controller class and is automatically with the FXML after the FXML has been loaded
+     *
+     * Sets up the table view columns and binds the data to the GUI parts,
+     * this also configures the checkin button
+     *
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Initializes columns of the table for each book attribute
@@ -57,14 +74,26 @@ public class AccountInfoController implements Initializable {
             }
         });
     }
-
+    /**
+     * ObservableList retrieces the list of books to display into the table
+     *
+     * @return books
+     */
     public ObservableList<Book> getBook(){
         // Observable list for usage with the TableView object
         // Placeholder book objects for testing
         // Returns the observable list
         return books;
     }
-
+    /**
+     * CheckInButton creates and handles the "check in" action
+     *
+     * The method retrieves the chosen book from the TableView, and checks-in the book
+     * the method also removes the book from the list of borrowed books
+     *
+     * GUI is updated to reflect the change
+     * @throws Exception
+     */
     @FXML
     public void checkInButton() throws Exception {
         Book b = checkoutTable.getSelectionModel().getSelectedItem();
